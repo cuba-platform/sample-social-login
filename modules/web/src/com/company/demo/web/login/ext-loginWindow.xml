@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.demo.web.login.ExtAppLoginWindow"
+        extends="/com/haulmont/cuba/web/app/loginwindow/loginwindow.xml"
+        messagesPack="com.company.demo.web.login">
+    <dialogMode height="600"
+                width="800"/>
+    <layout>
+        <vbox id="loginWrapper">
+            <vbox id="loginMainBox">
+                <button id="facebookBtn"
+                        align="MIDDLE_CENTER"
+                        caption="Facebook"
+                        icon="font-icon:FACEBOOK_SQUARE"
+                        invoke="loginFacebook"/>
+            </vbox>
+        </vbox>
+    </layout>
+</window>
