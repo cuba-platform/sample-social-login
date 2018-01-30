@@ -9,7 +9,7 @@ import com.haulmont.cuba.core.global.GlobalConfig;
 import com.haulmont.cuba.core.global.MessageTools;
 import com.haulmont.cuba.core.sys.AppContext;
 import com.haulmont.cuba.core.sys.SecurityContext;
-import com.haulmont.cuba.security.app.LoginService;
+import com.haulmont.cuba.security.app.TrustedClientService;
 import com.haulmont.cuba.security.entity.User;
 import com.haulmont.cuba.security.global.LoginException;
 import com.haulmont.cuba.security.global.UserSession;
@@ -39,7 +39,7 @@ public class FacebookAuthenticationController {
     @Inject
     private OAuthTokenIssuer oAuthTokenIssuer;
     @Inject
-    private LoginService loginService;
+    private TrustedClientService trustedClientService;
     @Inject
     private FacebookService facebookService;
     @Inject
@@ -79,7 +79,7 @@ public class FacebookAuthenticationController {
         WebAuthConfig webAuthConfig = configuration.getConfig(WebAuthConfig.class);
         UserSession session;
         try {
-            session = loginService.getSystemSession(webAuthConfig.getTrustedClientPassword());
+            session = trustedClientService.getSystemSession(webAuthConfig.getTrustedClientPassword());
         } catch (LoginException e) {
             throw new RuntimeException("Unable to use system session", e);
         }
