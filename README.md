@@ -12,3 +12,6 @@ You will be able to login using Facebook in both web and REST API application:
 
 - Web application: http://localhost:8080/app
 - JS application sample with REST API: http://localhost:8080/app/VAADIN/facebook-login-demo.html
+
+## Issues
+Please use https://www.cuba-platform.com/discuss for discussion, support, and reporting problems coressponding to this sample.
